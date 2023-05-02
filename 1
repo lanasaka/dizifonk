@@ -1,0 +1,5 @@
+function cleanAndRandomize($arr, $num) {
+  $arr = array_filter($arr); // boş veya NULL değerleri kaldırır
+  $keys = array_rand($arr, $num); // rastgele anahtarları seçer
+  return array_map(function($key) use($arr) { return $arr[$key]; }, (array) $keys); // anahtarları kullanarak değerleri seçer
+}
